@@ -4,15 +4,18 @@
     </head>
 
 <body>
+    
     <div>
         <h1><a href="/">Django Test Site</a></h1>
     </div>
 
+   {% for post in posts %}
     <div>
-        <p>最終更新日：2023/4/28</p>
-        <h2><a href="">このサイトは、私のテストサイトです。</a></h2>
-        <p>卒業研究のための、練習で作成したサイトです。</p> 
+        <p>最終更新日：{{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p> 
     </div>
+    {% endfor %}
 
 </body>
 </html>
